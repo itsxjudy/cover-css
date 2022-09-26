@@ -21,7 +21,7 @@ body {
 .cover-vinyl {
   width: 350px;
   height: 350px;
-  background: url(/img/cover.jpg) no-repeat center;
+  background: url(img/cover.jpg) no-repeat center;
   background-size: contain;
 }
 
@@ -51,7 +51,8 @@ body {
 .vinyl-label {
   width: 110px;
   height: 110px;
-  background-image: linear-gradient(to top, #2855e4, #e41745, #d45601);
+  background: -webkit-linear-gradient(to right, #c31432, #be1632);
+  background: linear-gradient(to right, #d8271a, #b40b0b);
   border-radius: 50%;
   display: flex;
   align-items: center;
