@@ -1,3 +1,10 @@
+:root {
+  --general-background: #ffffff1f;
+  --vynil-background: #000;
+  --vinyl-hole-background: #fff;
+  --default-radius: 50%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +12,14 @@
 
 html,
 body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.123);
+  background-color: var(--general-background);
 }
 
 .container {
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .cover-vinyl {
@@ -23,18 +27,16 @@ body {
   height: 350px;
   background: url(img/cover.jpg) no-repeat center;
   background-size: contain;
+  z-index: 2;
 }
 
 .vinyl {
-  width: 310px;
-  height: 310px;
-  border-radius: 50%;
-  background-color: black;
-  transform: translateX(-50px);
-  z-index: -15;
+  width: 305px;
+  height: 305px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--vynil-background);
   background-image: linear-gradient(
       130deg,
       transparent 40%,
@@ -43,25 +45,32 @@ body {
     ),
     repeating-radial-gradient(
       circle at center,
-      rgba(248, 248, 248, 0.082) 0 1px,
-      black 1px 5px
+      #f8f8f815 0 1px,
+      #000000 1px 5px
     );
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.37);
+  border-radius: var(--default-radius);
+  box-shadow: 10px 10px 15px #0000005e;
+  transform: translateX(-153px);
+  transition: transform 1s ease-in-out;
+}
+
+.vinyl:hover {
+  transform: translateX(-50px);
 }
 
 .vinyl-label {
   width: 110px;
   height: 110px;
-  background: linear-gradient(to top, #b20a2c, #fa6400, #b20a2c);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to top, #b20a2c, #fa6400, #b20a2c);
+  border-radius: var(--default-radius);
 }
 
 .vinyl-hole {
   width: 12px;
   height: 12px;
-  background-color: white;
-  border-radius: 50%;
+  background-color: var(--vinyl-hole-background);
+  border-radius: var(--default-radius);
 }
